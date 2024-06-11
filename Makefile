@@ -62,7 +62,9 @@ deps:
 	@# Download files using wget instead of svn.
 	wget -N -P appengine/third-party/ace https://github.com/ajaxorg/ace-builds/raw/master/src-min-noconflict/ace.js
 	mkdir -p appengine/third-party/blockly
-	wget -N -P appengine/third-party/blockly https://github.com/google/blockly/tree/master/
+	wget -N -P appengine/third-party/blockly https://github.com/google/blockly/archive/refs/heads/master.zip
+	unzip -o appengine/third-party/blockly/master.zip -d appengine/third-party/blockly
+
 	wget -N -P appengine/third-party/SoundJS https://github.com/CreateJS/SoundJS/tree/master/lib/
 	cp third-party/base.js appengine/third-party/
 	cp -R third-party/soundfonts appengine/third-party/
