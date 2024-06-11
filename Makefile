@@ -63,11 +63,11 @@ deps:
 	wget -N -P appengine/third-party/ace https://github.com/ajaxorg/ace-builds/raw/master/src-min-noconflict/ace.js
 	mkdir -p appengine/third-party/blockly
 	wget -N -P appengine/third-party/blockly https://github.com/google/blockly/tree/master/
-	svn export --force https://github.com/CreateJS/SoundJS/trunk/lib/ appengine/third-party/SoundJS
+	wget -N -P appengine/third-party/SoundJS https://github.com/CreateJS/SoundJS/tree/master/lib/
 	cp third-party/base.js appengine/third-party/
 	cp -R third-party/soundfonts appengine/third-party/
 
-	svn export --force https://github.com/NeilFraser/JS-Interpreter/trunk/ appengine/third-party/JS-Interpreter
+	wget -N -P appengine/third-party/JS-Interpreter https://github.com/NeilFraser/JS-Interpreter/
 	@# Compile JS-Interpreter using SIMPLE_OPTIMIZATIONS because the Music game needs to mess with the stack.
 	java -jar build/third-party-downloads/closure-compiler.jar\
 	  --language_out ECMASCRIPT5\
