@@ -59,8 +59,8 @@ deps:
 	mkdir -p appengine/third-party
 	wget -N https://unpkg.com/@babel/standalone@7.14.8/babel.min.js
 	mv babel.min.js appengine/third-party/
-	@# GitHub doesn't support git archive, so download files using svn.
-	svn export --force https://github.com/ajaxorg/ace-builds/tree/master/src-min-noconflict/ appengine/third-party/ace
+	@# Download files using wget instead of svn.
+	wget -N -P appengine/third-party/ace https://github.com/ajaxorg/ace-builds/raw/master/src-min-noconflict/ace.js
 	mkdir -p appengine/third-party/blockly
 	svn export --force https://github.com/NeilFraser/blockly-for-BG/trunk/ appengine/third-party/blockly
 	svn export --force https://github.com/CreateJS/SoundJS/trunk/lib/ appengine/third-party/SoundJS
