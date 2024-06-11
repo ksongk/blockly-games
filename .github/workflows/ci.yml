@@ -36,9 +36,7 @@ jobs:
           echo test, and deploy your project.
 
       - name: Install dependencies
-        run: 
-          cd blockly-games/
-          make deps
+        run:  make deps
 
       - name: Build all games
         run: make games
