@@ -36,7 +36,12 @@ jobs:
           echo test, and deploy your project.
 
       - name: Install dependencies
-        run:  make deps
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y make wget subversion
+
+      - name: Run make deps
+        run: make deps
 
       - name: Build all games
         run: make games
