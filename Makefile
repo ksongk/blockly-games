@@ -69,7 +69,8 @@ deps:
 	cp third-party/base.js appengine/third-party/
 	cp -R third-party/soundfonts appengine/third-party/
 
-	wget -N -P appengine/third-party/JS-Interpreter https://github.com/NeilFraser/JS-Interpreter/
+	wget -N -P appengine/third-party/JS-Interpreter https://github.com/NeilFraser/JS-Interpreter/archive/refs/heads/master.zip
+	unzip -o appengine/third-party/JS-Interpreter/master.zip -d appengine/third-party/JS-Interpreter
 	@# Compile JS-Interpreter using SIMPLE_OPTIMIZATIONS because the Music game needs to mess with the stack.
 	java -jar build/third-party-downloads/closure-compiler.jar\
 	  --language_out ECMASCRIPT5\
